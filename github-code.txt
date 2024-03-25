@@ -5,3 +5,16 @@ Resources:
     Properties:
       ImageId: ami-0c101f26f147fa7fd
       InstanceType: t2.micro
+
+
+Resources:
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+
+  Subnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcName: !Ref VPC
+      CidrBlock: 10.0.0.1/16
